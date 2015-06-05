@@ -1,0 +1,47 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 38.13     18.03    18.03                             electric_field
+ 14.46     24.87     6.84 1307211642     0.01     0.01  pythagoras
+ 13.31     31.16     6.30                             fftw_hc2hc_forward_generic
+ 10.55     36.15     4.99                             fftw_hc2hc_backward_generic
+  5.62     38.81     2.66                             __moddi3
+  3.41     40.42     1.61                             fftw_no_twiddle_11
+  2.81     41.75     1.33                             fftw_twiddle_6
+  2.33     42.85     1.10                             fftw_twiddle_rader
+  2.14     43.86     1.01                             fftwi_twiddle_rader
+  0.74     44.21     0.35                             writev
+  0.72     44.55     0.34                             __profile_frequency
+  0.67     44.86     0.32                             rexecutor_many
+  0.66     45.17     0.31                             fftw_no_twiddle_2
+  0.60     45.46     0.29                             fftwi_no_twiddle_2
+  0.50     45.69     0.24                             fftw_hc2real_1
+  0.47     45.91     0.22                             fftw_executor_simple
+  0.36     46.08     0.17                             fftw_real2hc_1
+  0.32     46.23     0.15                             _int_malloc
+  0.31     46.38     0.15    40974     3.54     3.54  gord
+  0.21     46.48     0.10                             _int_free
+  0.21     46.58     0.10                             surface_grid
+  0.20     46.67     0.10                             fftw_strided_copy
+  0.19     46.76     0.09                             fftw_hc2hc_backward_2
+  0.16     46.84     0.08                             rint
+  0.15     46.91     0.07                             discretise_structure
+  0.13     46.97     0.06                             rfftw_executor_simple
+  0.13     47.03     0.06                             rfftw_hc2c
+  0.11     47.08     0.05                             fftw_hc2hc_forward_2
+  0.11     47.13     0.05                             malloc
+  0.11     47.18     0.05                             rfftw_c2hc
+  0.06     47.21     0.03                             electric_point_charge
+  0.04     47.23     0.02                             __open_nocancel
+  0.03     47.24     0.02                             fftw_hc2hc_forward_32
+  0.02     47.25     0.01                             rfftw_real2c_aux
+  0.01     47.26     0.01                             fftw_die
+  0.01     47.26     0.01                             fftw_gettimeofday_time_diff
+  0.01     47.27     0.01                             fftw_malloc
+  0.01     47.27     0.01                             fftwi_no_twiddle_1
+  0.01     47.28     0.01                             rexecutor_simple_inplace
+  0.01     47.28     0.01                             rfftw_c2real_overlap_aux
+  0.00     47.28     0.00       22     0.00     0.00  duplicate_structure
+  0.00     47.28     0.00        1     0.00     0.00  main

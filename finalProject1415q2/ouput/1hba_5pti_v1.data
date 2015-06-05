@@ -1,0 +1,96 @@
+
+          3D-Dock Suite (March 2001)
+          Copyright (C) 1997-2000 Gidon Moont
+          This program comes with ABSOLUTELY NO WARRANTY
+          for details see license. This program is free software,
+          and you may redistribute it under certain conditions.
+
+          Biomolecular Modelling Laboratory
+          Imperial Cancer Research Fund
+          44 Lincoln's Inn Fields
+          London WC2A 3PX
+          +44 (0)20 7269 3348
+          http://www.bmm.icnet.uk/
+
+Starting FTDock (v2.0) global search program
+  reading parsed pdb file: ../../../inputs/1hba.parsed
+  reading parsed pdb file: ../../../inputs/5pti.parsed
+Total number of rotations is 9240
+Assigning charges
+Using automatic calculation for grid size
+Span = 109.194 angstroms
+Grid size = 156
+Each Grid cube = 0.69996 angstroms
+Electrostatics are on
+Creating plans
+PCA TIMING SHOULD start here
+Setting up Static Structure
+  surfacing grid
+  electric field calculations ( one dot / grid sheet ) ............................................................................................................................................................
+  one time forward FFT calculations
+  done
+Starting main loop through the rotations
+.G_DATA      1        0        199        -49  -26  -10         0   0   0
+G_DATA      1        0        176         57  -13   14         0   0   0
+G_DATA      1        0        175        -57    8   -2         0   0   0
+.G_DATA      2        0        198        -38  -41    7        12   0   0
+G_DATA      2        0        182         45   26   20        12   0   0
+G_DATA      2        0        168         20   47  -10        12   0   0
+.G_DATA      3        0        160         15  -47    6        24   0   0
+G_DATA      3        0        160        -40   24   32        24   0   0
+G_DATA      3        0        158        -30  -30  -36        24   0   0
+.G_DATA      4        0        152        -12   43  -16        36   0   0
+G_DATA      4        0        140         47   30   12        36   0   0
+G_DATA      4        0        135         48   29   12        36   0   0
+.G_DATA      5        0        166         -9  -46  -10        48   0   0
+G_DATA      5        0        165        -46  -36   12        48   0   0
+G_DATA      5        0        164        -10   41  -14        48   0   0
+.G_DATA      6        0        152        -55    1   13        60   0   0
+G_DATA      6        0        144        -51  -13   23        60   0   0
+G_DATA      6        0        143         20  -35   40        60   0   0
+.G_DATA      7        0        175         56   15   13        72   0   0
+G_DATA      7        0        161         56   14   13        72   0   0
+G_DATA      7        0        156         28   15  -49        72   0   0
+.G_DATA      8        0        164         20   33   29        84   0   0
+G_DATA      8        0        161         20   32   29        84   0   0
+G_DATA      8        0        157        -54   14    6        84   0   0
+.G_DATA      9        0        169         29   11  -48        96   0   0
+G_DATA      9        0        157         41  -36  -13        96   0   0
+G_DATA      9        0        155         -1  -43   20        96   0   0
+.G_DATA     10        0        166         -4  -19   49       108   0   0
+G_DATA     10        0        162        -29   46    0       108   0   0
+G_DATA     10        0        160         15   20   51       108   0   0
+.G_DATA     11        0        163        -19   -5   57       120   0   0
+G_DATA     11        0        162          5  -39   36       120   0   0
+G_DATA     11        0        152        -10   40  -15       120   0   0
+.G_DATA     12        0        187          1   11  -50       132   0   0
+G_DATA     12        0        159        -43  -37    0       132   0   0
+G_DATA     12        0        146          6   25  -45       132   0   0
+.G_DATA     13        0        160         55   -7   11       144   0   0
+G_DATA     13        0        159        -32  -16   43       144   0   0
+G_DATA     13        0        150         22   28  -40       144   0   0
+.G_DATA     14        0        185         42  -37    6       156   0   0
+G_DATA     14        0        148         20  -48  -22       156   0   0
+G_DATA     14        0        140        -33  -45   -7       156   0   0
+.G_DATA     15        0        155        -45  -33    2       168   0   0
+G_DATA     15        0        141        -44  -34    3       168   0   0
+G_DATA     15        0        140        -55    1   -4       168   0   0
+.G_DATA     16        0        187         -8  -38   21       180   0   0
+G_DATA     16        0        154        -36  -41  -17       180   0   0
+G_DATA     16        0        149        -19   22  -39       180   0   0
+.G_DATA     17        0        156         42   34   -8       192   0   0
+G_DATA     17        0        155         43   34   -8       192   0   0
+G_DATA     17        0        152        -14   -6   57       192   0   0
+.G_DATA     18        0        161        -11   -5   57       204   0   0
+G_DATA     18        0        157         43  -26   23       204   0   0
+G_DATA     18        0        157         45   33  -15       204   0   0
+.G_DATA     19        0        162         18  -48    1       216   0   0
+G_DATA     19        0        153        -15  -48   -9       216   0   0
+G_DATA     19        0        142        -58   17   14       216   0   0
+.G_DATA     20        0        176          1  -40  -14       228   0   0
+G_DATA     20        0        164         -2   31  -39       228   0   0
+G_DATA     20        0        163          1  -41  -15       228   0   0
+PCA TIMING SHOULD stop here
+
+ Timing amb crida times: user 126.320000 segons, system: 0.060000 segons
+PCA STOPS HERE

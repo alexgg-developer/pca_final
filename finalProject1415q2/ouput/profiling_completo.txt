@@ -1,0 +1,323 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ps/call  ps/call  name    
+ 19.53      9.74     9.74                             electric_field (electrostatics.c:163 @ 804c4de)
+ 12.93     16.19     6.45                             fftw_hc2hc_forward_generic
+ 12.70     22.53     6.34                             pythagoras (coordinates.c:51 @ 804c07a)
+ 10.24     27.63     5.11                             fftw_hc2hc_backward_generic
+  7.36     31.30     3.67                             electric_field (electrostatics.c:137 @ 804c43e)
+  3.56     33.08     1.78                             fftw_no_twiddle_11
+  3.19     34.67     1.59                             __udivmoddi4 (libgcc2.c:925 @ 8092531)
+  2.85     36.09     1.42                             electric_field (electrostatics.c:139 @ 804c456)
+  2.51     37.34     1.25                             fftwi_twiddle_rader
+  2.37     38.52     1.18                             fftw_twiddle_6
+  2.25     39.64     1.12                             fftw_twiddle_rader
+  1.86     40.57     0.93                             electric_field (electrostatics.c:132 @ 804c434)
+  1.55     41.34     0.78                             electric_field (electrostatics.c:141 @ 804c484)
+  1.38     42.03     0.69 1307211642   527.84   527.84  pythagoras (coordinates.c:49 @ 804c06f)
+  1.29     42.68     0.65                             electric_field (electrostatics.c:145 @ 804c49c)
+  1.18     43.27     0.59                             __profile_frequency (prof-freq.c:50 @ 80abc70)
+  1.03     43.78     0.52                             electric_field (electrostatics.c:135 @ 804c4f1)
+  1.01     44.29     0.51                             electric_field (electrostatics.c:134 @ 804c500)
+  0.86     44.72     0.43                             main (ftdock.c:653 @ 804a60e)
+  0.80     45.12     0.40                             __libc_writev (writev.c:56 @ 80d8a30)
+  0.70     45.47     0.35                             electric_field (electrostatics.c:135 @ 804c513)
+  0.61     45.77     0.31                             fftwi_no_twiddle_2
+  0.56     46.05     0.28                             rexecutor_many
+  0.54     46.32     0.27                             fftw_executor_simple
+  0.53     46.59     0.27                             electric_field (electrostatics.c:143 @ 804c490)
+  0.52     46.85     0.26                             __moddi3 (libgcc2.c:1144 @ 80924d0)
+  0.40     47.05     0.20                             fftw_no_twiddle_2
+  0.36     47.23     0.18                             __moddi3 (libgcc2.c:1161 @ 8092559)
+  0.36     47.41     0.18                             electric_field (electrostatics.c:153 @ 804c4d8)
+  0.35     47.58     0.18                             pythagoras (coordinates.c:53 @ 804c0c0)
+  0.32     47.74     0.16                             fftw_hc2real_1
+  0.27     47.88     0.14                             fftw_real2hc_1
+  0.24     48.00     0.12                             fftw_strided_copy
+  0.21     48.10     0.11                             electric_field (electrostatics.c:147 @ 804c496)
+  0.18     48.19     0.09                             __moddi3 (libgcc2.c:1144 @ 80924f3)
+  0.16     48.27     0.08                             rfftw_executor_simple
+  0.14     48.34     0.07                             __moddi3 (libgcc2.c:1158 @ 8092552)
+  0.14     48.41     0.07                             fftw_hc2hc_backward_2
+  0.13     48.48     0.07                             __udivmoddi4 (libgcc2.c:921 @ 809252d)
+  0.11     48.53     0.06                             __udivmoddi4 (libgcc2.c:907 @ 8092521)
+  0.11     48.59     0.06                             main (ftdock.c:654 @ 804a622)
+  0.10     48.64     0.05                             _int_malloc (malloc.c:4611 @ 80a20f9)
+  0.10     48.69     0.05                             fftw_hc2hc_forward_2
+  0.10     48.74     0.05                             main (ftdock.c:607 @ 804a1cf)
+  0.09     48.78     0.05                             rfftw_hc2c
+  0.08     48.82     0.04                             __udivmoddi4 (libgcc2.c:906 @ 8092515)
+  0.08     48.86     0.04                             __udivmoddi4 (libgcc2.c:906 @ 809251d)
+  0.08     48.90     0.04                             discretise_structure (grid.c:62 @ 804cac6)
+  0.08     48.94     0.04                             electric_field (electrostatics.c:82 @ 804c510)
+  0.08     48.98     0.04                             surface_grid (grid.c:152 @ 804cf0f)
+  0.07     49.02     0.04                             __udivmoddi4 (libgcc2.c:919 @ 8092519)
+  0.07     49.05     0.04                             gord (coordinates.c:41 @ 804c062)
+  0.07     49.09     0.04                             gord (coordinates.c:45 @ 804c06d)
+  0.07     49.12     0.04                             main (ftdock.c:650 @ 804a5ea)
+  0.07     49.16     0.04                             main (ftdock.c:657 @ 804a630)
+  0.06     49.19     0.03                             __moddi3 (libgcc2.c:1150 @ 8092505)
+  0.06     49.22     0.03                             _int_malloc (malloc.c:4614 @ 80a2103)
+  0.06     49.25     0.03                             _int_malloc (malloc.c:4636 @ 80a2321)
+  0.06     49.28     0.03                             rint (s_rint.S:13 @ 80924c6)
+  0.05     49.30     0.03                             __moddi3 (libgcc2.c:1145 @ 80924fd)
+  0.05     49.33     0.03                             __udivmoddi4 (libgcc2.c:919 @ 809252b)
+  0.05     49.35     0.03                             surface_grid (grid.c:152 @ 804cef8)
+  0.04     49.37     0.02                             __udivmoddi4 (libgcc2.c:915 @ 8092525)
+  0.04     49.39     0.02                             __udivmoddi4 (libgcc2.c:916 @ 8092527)
+  0.04     49.41     0.02                             __udivmoddi4 (libgcc2.c:1041 @ 8092544)
+  0.04     49.43     0.02                             _int_free (malloc.c:4928 @ 80a12bc)
+  0.04     49.45     0.02                             _int_free (malloc.c:4967 @ 80a134e)
+  0.04     49.47     0.02                             main (ftdock.c:44 @ 804a5d3)
+  0.04     49.49     0.02                             main (ftdock.c:678 @ 804a72a)
+  0.04     49.51     0.02                             surface_grid (grid.c:142 @ 804ce3f)
+  0.03     49.53     0.02                             __libc_malloc (malloc.c:3682 @ 80a4486)
+  0.03     49.54     0.02                             main (ftdock.c:601 @ 804a1a5)
+  0.02     49.55     0.01                             __libc_malloc (malloc.c:3657 @ 80a4440)
+  0.02     49.56     0.01                             __moddi3 (libgcc2.c:1146 @ 80924ef)
+  0.02     49.57     0.01                             __moddi3 (libgcc2.c:1153 @ 809250d)
+  0.02     49.58     0.01                             __udivmoddi4 (libgcc2.c:947 @ 8092539)
+  0.02     49.59     0.01                             _int_free (malloc.c:4765 @ 80a11b0)
+  0.02     49.60     0.01                             _int_free (malloc.c:5054 @ 80a1684)
+  0.02     49.61     0.01                             _int_malloc (malloc.c:4727 @ 80a1dda)
+  0.02     49.62     0.01                             _int_malloc (malloc.c:4727 @ 80a1e14)
+  0.02     49.63     0.01                             _int_malloc (malloc.c:4392 @ 80a1e82)
+  0.02     49.64     0.01                             _int_malloc (malloc.c:4395 @ 80a1e9e)
+  0.02     49.65     0.01                             _int_malloc (malloc.c:4371 @ 80a22e3)
+  0.02     49.66     0.01                             discretise_structure (grid.c:89 @ 804ccd4)
+  0.02     49.67     0.01                             electric_field (electrostatics.c:130 @ 804c40b)
+  0.02     49.68     0.01                             electric_field (electrostatics.c:153 @ 804c4ac)
+  0.02     49.69     0.01                             electric_field_zero_core (electrostatics.c:297 @ 804c9ca)
+  0.02     49.70     0.01                             fftw_free
+  0.02     49.71     0.01                             fftw_malloc
+  0.02     49.72     0.01                             mALLINFo (malloc.c:5927 @ 80a1197)
+  0.02     49.73     0.01                             main (ftdock.c:606 @ 804a1e3)
+  0.02     49.74     0.01                             main (ftdock.c:608 @ 804a1ed)
+  0.02     49.75     0.01                             main (ftdock.c:595 @ 804a20a)
+  0.02     49.76     0.01                             main (ftdock.c:640 @ 804a749)
+  0.02     49.77     0.01                             rfftw_c2hc
+  0.02     49.78     0.01                             surface_grid (grid.c:150 @ 804cefe)
+  0.02     49.79     0.01                             surface_grid (grid.c:148 @ 804cf2f)
+  0.01     49.80     0.01                             __libc_free (malloc.c:3706 @ 80a4874)
+  0.01     49.80     0.01                             __libc_free (malloc.c:3709 @ 80a4877)
+  0.01     49.81     0.01                             __libc_malloc (malloc.c:3685 @ 80a449e)
+  0.01     49.81     0.01                             __udivmoddi4 (libgcc2.c:907 @ 809251b)
+  0.01     49.82     0.01                             _int_free (malloc.c:4985 @ 80a136a)
+  0.01     49.82     0.01                             _int_free (malloc.c:4984 @ 80a136e)
+  0.01     49.83     0.01                             _int_free (malloc.c:5032 @ 80a13b2)
+  0.01     49.83     0.01                             _int_free (malloc.c:5033 @ 80a13be)
+  0.01     49.84     0.01                             _int_malloc (malloc.c:4639 @ 80a237e)
+  0.01     49.84     0.01                             _int_malloc (malloc.c:4652 @ 80a2383)
+  0.01     49.85     0.01                             fftw_no_twiddle_10
+  0.01     49.85     0.01                             fftwi_no_twiddle_1
+  0.01     49.86     0.01                             main (ftdock.c:594 @ 804a185)
+  0.01     49.86     0.01                             main (ftdock.c:44 @ 804a608)
+  0.01     49.87     0.01                             rfftw_one
+  0.01     49.87     0.01                             surface_grid (grid.c:112 @ 804cef2)
+  0.00     49.87     0.00    40974     0.00     0.00  gord (coordinates.c:33 @ 804c034)
+  0.00     49.87     0.00       22     0.00     0.00  duplicate_structure (manipulate_structures.c:261 @ 804b134)
+  0.00     49.87     0.00       21     0.00     0.00  discretise_structure (grid.c:31 @ 804ca40)
+  0.00     49.87     0.00       20     0.00     0.00  electric_point_charge (electrostatics.c:192 @ 804c5ff)
+  0.00     49.87     0.00       20     0.00     0.00  rotate_structure (manipulate_structures.c:420 @ 804b4d4)
+  0.00     49.87     0.00        2     0.00     0.00  assign_charges (electrostatics.c:31 @ 804c0c4)
+  0.00     49.87     0.00        2     0.00     0.00  radius_of_structure (manipulate_structures.c:551 @ 804ba65)
+  0.00     49.87     0.00        2     0.00     0.00  read_pdb_to_structure (manipulate_structures.c:31 @ 804ab24)
+  0.00     49.87     0.00        2     0.00     0.00  translate_structure_onto_origin (manipulate_structures.c:348 @ 804b3aa)
+  0.00     49.87     0.00        1     0.00     0.00  electric_field (electrostatics.c:82 @ 804c2f8)
+  0.00     49.87     0.00        1     0.00     0.00  electric_field_zero_core (electrostatics.c:283 @ 804c982)
+  0.00     49.87     0.00        1     0.00     0.00  generate_global_angles (angles.c:31 @ 804bb44)
+  0.00     49.87     0.00        1     0.00     0.00  main (ftdock.c:44 @ 8048c5f)
+  0.00     49.87     0.00        1     0.00     0.00  surface_grid (grid.c:112 @ 804cdba)
+  0.00     49.87     0.00        1     0.00     0.00  total_span_of_structures (manipulate_structures.c:589 @ 804baf2)
+
+			Call graph
+
+
+granularity: each sample hit covers 2 byte(s) for 0.02% of 49.87 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[2]     12.9    6.45    0.00                 fftw_hc2hc_forward_generic [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]     10.2    5.11    0.00                 fftw_hc2hc_backward_generic [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      3.6    1.78    0.00                 fftw_no_twiddle_11 [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      2.5    1.25    0.00                 fftwi_twiddle_rader [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     2.4    1.18    0.00                 fftw_twiddle_6 [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[11]     2.2    1.12    0.00                 fftw_twiddle_rader [11]
+-----------------------------------------------
+                0.00    0.00 7915482/1307211642     discretise_structure (grid.c:91 @ 804ccea) [114]
+                0.69    0.00 1299296160/1307211642     electric_field (electrostatics.c:139 @ 804c456) [6]
+[14]     1.4    0.69    0.00 1307211642         pythagoras (coordinates.c:49 @ 804c06f) [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[16]     1.2    0.59    0.00                 __profile_frequency (prof-freq.c:50 @ 80abc70) [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[22]     0.6    0.31    0.00                 fftwi_no_twiddle_2 [22]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     0.6    0.28    0.00                 rexecutor_many [23]
+-----------------------------------------------
+                                                 <spontaneous>
+[24]     0.5    0.27    0.00                 fftw_executor_simple [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[26]     0.5    0.26    0.00                 __moddi3 (libgcc2.c:1144 @ 80924d0) [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[27]     0.4    0.20    0.00                 fftw_no_twiddle_2 [27]
+-----------------------------------------------
+                                                 <spontaneous>
+[31]     0.3    0.16    0.00                 fftw_hc2real_1 [31]
+-----------------------------------------------
+                                                 <spontaneous>
+[32]     0.3    0.14    0.00                 fftw_real2hc_1 [32]
+-----------------------------------------------
+                                                 <spontaneous>
+[33]     0.2    0.12    0.00                 fftw_strided_copy [33]
+-----------------------------------------------
+                                                 <spontaneous>
+[36]     0.2    0.08    0.00                 rfftw_executor_simple [36]
+-----------------------------------------------
+                                                 <spontaneous>
+[37]     0.1    0.07    0.00                 fftw_hc2hc_backward_2 [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[42]     0.1    0.05    0.00                 fftw_hc2hc_forward_2 [42]
+-----------------------------------------------
+                                                 <spontaneous>
+[45]     0.1    0.05    0.00                 rfftw_hc2c [45]
+-----------------------------------------------
+                                                 <spontaneous>
+[77]     0.0    0.01    0.00                 fftw_free [77]
+-----------------------------------------------
+                                                 <spontaneous>
+[78]     0.0    0.01    0.00                 fftw_malloc [78]
+-----------------------------------------------
+                                                 <spontaneous>
+[84]     0.0    0.01    0.00                 rfftw_c2hc [84]
+-----------------------------------------------
+                                                 <spontaneous>
+[91]     0.0    0.01    0.00                 _int_free (malloc.c:4765 @ 80a11b0) [91]
+-----------------------------------------------
+                                                 <spontaneous>
+[98]     0.0    0.01    0.00                 fftw_no_twiddle_10 [98]
+-----------------------------------------------
+                                                 <spontaneous>
+[99]     0.0    0.01    0.00                 fftwi_no_twiddle_1 [99]
+-----------------------------------------------
+                                                 <spontaneous>
+[102]    0.0    0.01    0.00                 rfftw_one [102]
+-----------------------------------------------
+                0.00    0.00    2800/40974       electric_point_charge (electrostatics.c:234 @ 804c71d) [2102]
+                0.00    0.00    2800/40974       electric_point_charge (electrostatics.c:235 @ 804c74e) [2103]
+                0.00    0.00    2800/40974       electric_point_charge (electrostatics.c:236 @ 804c777) [2104]
+                0.00    0.00   10858/40974       discretise_structure (grid.c:75 @ 804cb67) [1397]
+                0.00    0.00   10858/40974       discretise_structure (grid.c:76 @ 804cb8d) [1398]
+                0.00    0.00   10858/40974       discretise_structure (grid.c:77 @ 804cbb3) [1399]
+[115]    0.0    0.00    0.00   40974         gord (coordinates.c:33 @ 804c034) [115]
+-----------------------------------------------
+                0.00    0.00       2/22          translate_structure_onto_origin (manipulate_structures.c:362 @ 804b3bb) [11419]
+                0.00    0.00      20/22          rotate_structure (manipulate_structures.c:435 @ 804b4e5) [9673]
+[116]    0.0    0.00    0.00      22         duplicate_structure (manipulate_structures.c:261 @ 804b134) [116]
+-----------------------------------------------
+                0.00    0.00       1/21          main (ftdock.c:497 @ 8049c33) [6327]
+                0.00    0.00      20/21          main (ftdock.c:573 @ 804a0bc) [6368]
+[117]    0.0    0.00    0.00      21         discretise_structure (grid.c:31 @ 804ca40) [117]
+-----------------------------------------------
+                0.00    0.00      20/20          main (ftdock.c:577 @ 804a101) [6370]
+[118]    0.0    0.00    0.00      20         electric_point_charge (electrostatics.c:192 @ 804c5ff) [118]
+-----------------------------------------------
+                0.00    0.00      20/20          main (ftdock.c:569 @ 804a055) [6367]
+[119]    0.0    0.00    0.00      20         rotate_structure (manipulate_structures.c:420 @ 804b4d4) [119]
+-----------------------------------------------
+                0.00    0.00       1/2           main (ftdock.c:387 @ 804980d) [6277]
+                0.00    0.00       1/2           main (ftdock.c:388 @ 8049821) [6278]
+[120]    0.0    0.00    0.00       2         assign_charges (electrostatics.c:31 @ 804c0c4) [120]
+-----------------------------------------------
+                0.00    0.00       2/2           total_span_of_structures (manipulate_structures.c:591 @ 804bb06) [11393]
+[121]    0.0    0.00    0.00       2         radius_of_structure (manipulate_structures.c:551 @ 804ba65) [121]
+-----------------------------------------------
+                0.00    0.00       1/2           main (ftdock.c:364 @ 804970c) [6266]
+                0.00    0.00       1/2           main (ftdock.c:365 @ 8049739) [6267]
+[122]    0.0    0.00    0.00       2         read_pdb_to_structure (manipulate_structures.c:31 @ 804ab24) [122]
+-----------------------------------------------
+                0.00    0.00       1/2           main (ftdock.c:395 @ 8049835) [6279]
+                0.00    0.00       1/2           main (ftdock.c:396 @ 804986f) [6280]
+[123]    0.0    0.00    0.00       2         translate_structure_onto_origin (manipulate_structures.c:348 @ 804b3aa) [123]
+-----------------------------------------------
+                0.00    0.00       1/1           main (ftdock.c:503 @ 8049cbd) [6331]
+[124]    0.0    0.00    0.00       1         electric_field (electrostatics.c:82 @ 804c2f8) [124]
+-----------------------------------------------
+                0.00    0.00       1/1           main (ftdock.c:504 @ 8049cfb) [6332]
+[125]    0.0    0.00    0.00       1         electric_field_zero_core (electrostatics.c:283 @ 804c982) [125]
+-----------------------------------------------
+                0.00    0.00       1/1           main (ftdock.c:377 @ 80497a0) [6273]
+[126]    0.0    0.00    0.00       1         generate_global_angles (angles.c:31 @ 804bb44) [126]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_start_main (libc-start.c:226 @ 809281a) [26413]
+[127]    0.0    0.00    0.00       1         main (ftdock.c:44 @ 8048c5f) [127]
+-----------------------------------------------
+                0.00    0.00       1/1           main (ftdock.c:502 @ 8049cb0) [6330]
+[128]    0.0    0.00    0.00       1         surface_grid (grid.c:112 @ 804cdba) [128]
+-----------------------------------------------
+                0.00    0.00       1/1           main (ftdock.c:414 @ 8049916) [6289]
+[129]    0.0    0.00    0.00       1         total_span_of_structures (manipulate_structures.c:589 @ 804baf2) [129]
+-----------------------------------------------
+
+Index by function name
+
+ [104] __libc_free (malloc.c:3706 @ 80a4874) [112] _int_malloc (malloc.c:4639 @ 80a237e) [9] fftwi_twiddle_rader
+ [105] __libc_free (malloc.c:3709 @ 80a4877) [113] _int_malloc (malloc.c:4652 @ 80a2383) [126] generate_global_angles (angles.c:31 @ 804bb44)
+  [87] __libc_malloc (malloc.c:3657 @ 80a4440) [120] assign_charges (electrostatics.c:31 @ 804c0c4) [115] gord (coordinates.c:33 @ 804c034)
+  [72] __libc_malloc (malloc.c:3682 @ 80a4486) [117] discretise_structure (grid.c:31 @ 804ca40) [51] gord (coordinates.c:41 @ 804c062)
+ [106] __libc_malloc (malloc.c:3685 @ 80a449e) [46] discretise_structure (grid.c:62 @ 804cac6) [52] gord (coordinates.c:45 @ 804c06d)
+  [20] __libc_writev (writev.c:56 @ 80d8a30) [73] discretise_structure (grid.c:89 @ 804ccd4) [79] mALLINFo (malloc.c:5927 @ 80a1197)
+  [26] __moddi3 (libgcc2.c:1144 @ 80924d0) [116] duplicate_structure (manipulate_structures.c:261 @ 804b134) [127] main (ftdock.c:44 @ 8048c5f)
+  [88] __moddi3 (libgcc2.c:1146 @ 80924ef) [124] electric_field (electrostatics.c:82 @ 804c2f8) [100] main (ftdock.c:594 @ 804a185)
+  [35] __moddi3 (libgcc2.c:1144 @ 80924f3) [74] electric_field (electrostatics.c:130 @ 804c40b) [71] main (ftdock.c:601 @ 804a1a5)
+  [61] __moddi3 (libgcc2.c:1145 @ 80924fd) [12] electric_field (electrostatics.c:132 @ 804c434) [43] main (ftdock.c:607 @ 804a1cf)
+  [57] __moddi3 (libgcc2.c:1150 @ 8092505) [5] electric_field (electrostatics.c:137 @ 804c43e) [80] main (ftdock.c:606 @ 804a1e3)
+  [89] __moddi3 (libgcc2.c:1153 @ 809250d) [6] electric_field (electrostatics.c:139 @ 804c456) [81] main (ftdock.c:608 @ 804a1ed)
+  [38] __moddi3 (libgcc2.c:1158 @ 8092552) [13] electric_field (electrostatics.c:141 @ 804c484) [82] main (ftdock.c:595 @ 804a20a)
+  [29] __moddi3 (libgcc2.c:1161 @ 8092559) [25] electric_field (electrostatics.c:143 @ 804c490) [63] main (ftdock.c:44 @ 804a5d3)
+  [16] __profile_frequency (prof-freq.c:50 @ 80abc70) [34] electric_field (electrostatics.c:147 @ 804c496) [53] main (ftdock.c:650 @ 804a5ea)
+  [49] __udivmoddi4 (libgcc2.c:906 @ 8092515) [15] electric_field (electrostatics.c:145 @ 804c49c) [101] main (ftdock.c:44 @ 804a608)
+  [55] __udivmoddi4 (libgcc2.c:919 @ 8092519) [75] electric_field (electrostatics.c:153 @ 804c4ac) [19] main (ftdock.c:653 @ 804a60e)
+ [107] __udivmoddi4 (libgcc2.c:907 @ 809251b) [28] electric_field (electrostatics.c:153 @ 804c4d8) [40] main (ftdock.c:654 @ 804a622)
+  [50] __udivmoddi4 (libgcc2.c:906 @ 809251d) [1] electric_field (electrostatics.c:163 @ 804c4de) [54] main (ftdock.c:657 @ 804a630)
+  [41] __udivmoddi4 (libgcc2.c:907 @ 8092521) [17] electric_field (electrostatics.c:135 @ 804c4f1) [64] main (ftdock.c:678 @ 804a72a)
+  [66] __udivmoddi4 (libgcc2.c:915 @ 8092525) [18] electric_field (electrostatics.c:134 @ 804c500) [83] main (ftdock.c:640 @ 804a749)
+  [67] __udivmoddi4 (libgcc2.c:916 @ 8092527) [47] electric_field (electrostatics.c:82 @ 804c510) [14] pythagoras (coordinates.c:49 @ 804c06f)
+  [62] __udivmoddi4 (libgcc2.c:919 @ 809252b) [21] electric_field (electrostatics.c:135 @ 804c513) [3] pythagoras (coordinates.c:51 @ 804c07a)
+  [39] __udivmoddi4 (libgcc2.c:921 @ 809252d) [125] electric_field_zero_core (electrostatics.c:283 @ 804c982) [30] pythagoras (coordinates.c:53 @ 804c0c0)
+   [8] __udivmoddi4 (libgcc2.c:925 @ 8092531) [76] electric_field_zero_core (electrostatics.c:297 @ 804c9ca) [121] radius_of_structure (manipulate_structures.c:551 @ 804ba65)
+  [90] __udivmoddi4 (libgcc2.c:947 @ 8092539) [118] electric_point_charge (electrostatics.c:192 @ 804c5ff) [122] read_pdb_to_structure (manipulate_structures.c:31 @ 804ab24)
+  [68] __udivmoddi4 (libgcc2.c:1041 @ 8092544) [24] fftw_executor_simple [23] rexecutor_many
+  [91] _int_free (malloc.c:4765 @ 80a11b0) [77] fftw_free [84] rfftw_c2hc
+  [69] _int_free (malloc.c:4928 @ 80a12bc) [37] fftw_hc2hc_backward_2 [36] rfftw_executor_simple
+  [70] _int_free (malloc.c:4967 @ 80a134e) [4] fftw_hc2hc_backward_generic [45] rfftw_hc2c
+ [108] _int_free (malloc.c:4985 @ 80a136a) [42] fftw_hc2hc_forward_2 [102] rfftw_one
+ [109] _int_free (malloc.c:4984 @ 80a136e) [2] fftw_hc2hc_forward_generic [56] rint (s_rint.S:13 @ 80924c6)
+ [110] _int_free (malloc.c:5032 @ 80a13b2) [31] fftw_hc2real_1 [119] rotate_structure (manipulate_structures.c:420 @ 804b4d4)
+ [111] _int_free (malloc.c:5033 @ 80a13be) [78] fftw_malloc [128] surface_grid (grid.c:112 @ 804cdba)
+  [92] _int_free (malloc.c:5054 @ 80a1684) [98] fftw_no_twiddle_10 [65] surface_grid (grid.c:142 @ 804ce3f)
+  [93] _int_malloc (malloc.c:4727 @ 80a1dda) [7] fftw_no_twiddle_11 [103] surface_grid (grid.c:112 @ 804cef2)
+  [94] _int_malloc (malloc.c:4727 @ 80a1e14) [27] fftw_no_twiddle_2 [60] surface_grid (grid.c:152 @ 804cef8)
+  [95] _int_malloc (malloc.c:4392 @ 80a1e82) [32] fftw_real2hc_1 [85] surface_grid (grid.c:150 @ 804cefe)
+  [96] _int_malloc (malloc.c:4395 @ 80a1e9e) [33] fftw_strided_copy [48] surface_grid (grid.c:152 @ 804cf0f)
+  [44] _int_malloc (malloc.c:4611 @ 80a20f9) [10] fftw_twiddle_6 [86] surface_grid (grid.c:148 @ 804cf2f)
+  [58] _int_malloc (malloc.c:4614 @ 80a2103) [11] fftw_twiddle_rader [129] total_span_of_structures (manipulate_structures.c:589 @ 804baf2)
+  [97] _int_malloc (malloc.c:4371 @ 80a22e3) [99] fftwi_no_twiddle_1 [123] translate_structure_onto_origin (manipulate_structures.c:348 @ 804b3aa)
+  [59] _int_malloc (malloc.c:4636 @ 80a2321) [22] fftwi_no_twiddle_2
