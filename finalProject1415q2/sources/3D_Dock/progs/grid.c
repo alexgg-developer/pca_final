@@ -42,6 +42,9 @@ void discretise_structure( struct Structure This_Structure , float grid_span , u
   int	steps , x_step , y_step , z_step ;
 
   float		x_centre , y_centre , z_centre ;
+  float		x_centre1 , y_centre1 , z_centre1 ;
+  float		x_centre2 , y_centre2 , z_centre2 ;
+  float		x_centre3 , y_centre3 , z_centre3 ;
 
   /* Variables */
 
@@ -69,8 +72,90 @@ void discretise_structure( struct Structure This_Structure , float grid_span , u
 /************/
 
   steps = (int)( ( distance / one_span ) + 1.5 ) ;
+  unsigned int forStep = 4;
+  //allargar la distancia on es fa a on és necessita.
+
 
   for( residue = 1 ; residue <= This_Structure.length ; residue ++ ) {
+      for( atom = 1 ; atom <= This_Structure.Residue[residue].size ; atom ++ ) {
+          x = gord( This_Structure.Residue[residue].Atom[atom].coord[1] , grid_span , grid_size ) ;
+          y = gord( This_Structure.Residue[residue].Atom[atom].coord[2] , grid_span , grid_size ) ;
+          z = gord( This_Structure.Residue[residue].Atom[atom].coord[3] , grid_span , grid_size ) ;
+          int max_x_step = max_int( ( x - steps ) , 0 );
+          int min_x_step = min_int( ( x + steps ) , ( grid_size - 1 ) );
+          int max_y_step = max_int( ( y - steps ) , 0 );
+          int min_y_step = min_int( ( y + steps ) , ( grid_size - 1 ) );
+          int max_z_step = max_int( ( z - steps ) , 0 );
+          int min_z_step = min_int( ( z + steps ) , ( grid_size - 1 ) );
+          for( x_step = max_x_step; x_step <= min_x_step; x_step ++ ) {
+              x_centre = gcentre( x_step , grid_span , grid_size ) ;
+              for( y_step = max_y_step ; y_step <= min_y_step ; y_step ++ ) {
+                  y_centre = gcentre( y_step , grid_span , grid_size ) ;
+                  for( z_step = max_z_step ; z_step - forStep <= min_z_step ; z_step += forStep ) {
+                    z_centre  = gcentre( z_step , grid_span , grid_size ) ;
+                    z_centre1  = gcentre( z_step + 1 , grid_span , grid_size ) ;
+                    z_centre2  = gcentre( z_step + 2, grid_span , grid_size ) ;
+                    z_centre3  = gcentre( z_step + 3, grid_span , grid_size ) ;
+
+                    float a = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre;
+                    float b = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre;
+                    float c = This_Structure.Residue[residue].Atom[atom].coord[3] - z_centre;
+                    float sqrDistanceToCenter = a*a + b*b + c*c;
+                    //if(sqrDistanceToCenter < sqrDistance)
+                    if((sqrDistanceToCenter < sqrDistance)) {
+                        grid[gaddress(x_step,y_step,z_step,grid_size)] = (fftw_real)1 ;
+                    }
+
+
+                    float a1 = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre;
+                    float b1 = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre;
+                    float c1 = This_Structure.Residue[residue].Atom[atom].coord[3] - z_centre1;
+                    float sqrDistanceToCenter1 = a1*a1 + b1*b1 + c1*c1;
+                    //if(sqrDistanceToCenter < sqrDistance)
+                    if((sqrDistanceToCenter1 < sqrDistance)) {
+                        grid[gaddress(x_step,y_step,z_step + 1,grid_size)] = (fftw_real)1 ;
+                    }
+
+
+                    float a2 = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre;
+                    float b2 = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre;
+                    float c2 = This_Structure.Residue[residue].Atom[atom].coord[3] - z_centre2;
+                    float sqrDistanceToCenter2 = a2*a2 + b2*b2 + c2*c2;
+                    //if(sqrDistanceToCenter < sqrDistance)
+                    if((sqrDistanceToCenter2 < sqrDistance)) {
+                        grid[gaddress(x_step,y_step,z_step+2,grid_size)] = (fftw_real)1 ;
+                    }
+
+
+                    float a3 = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre;
+                    float b3 = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre;
+                    float c3 = This_Structure.Residue[residue].Atom[atom].coord[3] - z_centre3;
+                    float sqrDistanceToCenter3 = a3*a3 + b3*b3 + c3*c3;
+                    //if(sqrDistanceToCenter < sqrDistance)
+                    if((sqrDistanceToCenter3 < sqrDistance)) {
+                        grid[gaddress(x_step,y_step,z_step+3,grid_size)] = (fftw_real)1 ;
+                    }
+
+
+                  }
+
+                  for( z_step; z_step <= min_z_step ; z_step ++ ) {
+                     z_centre = gcentre( z_step , grid_span , grid_size ) ;
+                     float a = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre;
+                     float b = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre;
+                     float c = This_Structure.Residue[residue].Atom[atom].coord[3] - z_centre;
+                     float sqrDistanceToCenter = a*a + b*b + c*c;
+                     //if(sqrDistanceToCenter < sqrDistance)
+                     if((sqrDistanceToCenter < sqrDistance)) {
+                        grid[gaddress(x_step,y_step,z_step,grid_size)] = (fftw_real)1 ;
+                     }
+                 }
+              }
+          }
+      }
+  }
+
+  /*for( residue = 1 ; residue <= This_Structure.length ; residue ++ ) {
     for( atom = 1 ; atom <= This_Structure.Residue[residue].size ; atom ++ ) {
 
       x = gord( This_Structure.Residue[residue].Atom[atom].coord[1] , grid_span , grid_size ) ;
@@ -82,18 +167,27 @@ void discretise_structure( struct Structure This_Structure , float grid_span , u
       int min_y_step = min_int( ( y + steps ) , ( grid_size - 1 ) );
       int max_z_step = max_int( ( z - steps ) , 0 );
       int min_z_step = min_int( ( z + steps ) , ( grid_size - 1 ) );
-
-      for( x_step =  max_x_step; x_step <= min_x_step; x_step ++ ) {
+      unsigned int forStep = 4;
+      for( x_step =  max_x_step; x_step - forStep <= min_x_step; x_step += forStep ) {
 
         x_centre  = gcentre( x_step , grid_span , grid_size ) ;
+        x_centre1  = gcentre( x_step , grid_span , grid_size ) ;
+        x_centre2  = gcentre( x_step , grid_span , grid_size ) ;
+        x_centre3  = gcentre( x_step , grid_span , grid_size ) ;
 
-        for( y_step = max_y_step ; y_step <= min_y_step ; y_step ++ ) {
+        for( y_step = max_y_step ; y_step - forStep <= min_y_step ; y_step += forStep ) {
 
           y_centre  = gcentre( y_step , grid_span , grid_size ) ;
+          y_centre1  = gcentre( y_step , grid_span , grid_size ) ;
+          y_centre2  = gcentre( y_step , grid_span , grid_size ) ;
+          y_centre3  = gcentre( y_step , grid_span , grid_size ) ;
 
-          for( z_step = max_z_step ; z_step <= min_z_step ; z_step ++ ) {
+          for( z_step = max_z_step ; z_step - forStep <= min_z_step ; z_step += forStep ) {
 
             z_centre  = gcentre( z_step , grid_span , grid_size ) ;
+            z_centre1  = gcentre( z_step , grid_span , grid_size ) ;
+            z_centre2  = gcentre( z_step , grid_span , grid_size ) ;
+            z_centre3  = gcentre( z_step , grid_span , grid_size ) ;
 
             float a = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre;
             float b = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre;
@@ -103,12 +197,56 @@ void discretise_structure( struct Structure This_Structure , float grid_span , u
             if((sqrDistanceToCenter < sqrDistance)) {
                 grid[gaddress(x_step,y_step,z_step,grid_size)] = (fftw_real)1 ;
             }
+
+
+            float a1 = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre1;
+            float b1 = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre1;
+            float c1 = This_Structure.Residue[residue].Atom[atom].coord[3] - z_centre1;
+            float sqrDistanceToCenter1 = a*a + b*b + c*c;
+            //if(sqrDistanceToCenter < sqrDistance)
+            if((sqrDistanceToCenter1 < sqrDistance)) {
+                grid[gaddress(x_step,y_step,z_step,grid_size)] = (fftw_real)1 ;
+            }
+
+
+            float a2 = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre2;
+            float b2 = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre2;
+            float c2 = This_Structure.Residue[residue].Atom[atom].coord[3] - z_centre2;
+            float sqrDistanceToCenter2 = a*a + b*b + c*c;
+            //if(sqrDistanceToCenter < sqrDistance)
+            if((sqrDistanceToCenter2 < sqrDistance)) {
+                grid[gaddress(x_step,y_step,z_step,grid_size)] = (fftw_real)1 ;
+            }
+
+
+            float a3 = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre3;
+            float b3 = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre3;
+            float c3 = This_Structure.Residue[residue].Atom[atom].coord[3] - z_centre3;
+            float sqrDistanceToCenter3 = a*a + b*b + c*c;
+            //if(sqrDistanceToCenter < sqrDistance)
+            if((sqrDistanceToCenter3 < sqrDistance)) {
+                grid[gaddress(x_step,y_step,z_step,grid_size)] = (fftw_real)1 ;
+            }
+
+
           }
+
+          for( z_step; z_step <= min_z_step ; z_step ++ ) {
+             z_centre = gcentre( z_step , grid_span , grid_size ) ;
+             float a = This_Structure.Residue[residue].Atom[atom].coord[1] - x_centre;
+             float b = This_Structure.Residue[residue].Atom[atom].coord[2] - y_centre;
+             float c = This_Structure.Residue[residue].Atom[atom].coord[3] - z_centre;
+             float sqrDistanceToCenter = a*a + b*b + c*c;
+             //if(sqrDistanceToCenter < sqrDistance)
+             if((sqrDistanceToCenter < sqrDistance)) {
+             grid[gaddress(x_step,y_step,z_step,grid_size)] = (fftw_real)1 ;
+             }
+         }
         }
       }
 
     }
-  }
+  }*/
 
 /************/
 

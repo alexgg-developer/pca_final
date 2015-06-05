@@ -1,4 +1,10 @@
 Flat profile:
+electric_field
+pythagoras
+__udivmoddi4
+__moddi3
+discretise_structure
+surface_grid
 
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
